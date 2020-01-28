@@ -50,24 +50,15 @@ namespace TipCalculator
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            int selectedIntex = ComboMeal.SelectedIndex;
-            double basePrice = 0;
             double tip = 0;
             double extraEveningTip = 0;
-            switch (selectedIntex)
+            string basePriceStr = BasePriceTextBox.Text;
+            double basePrice = 0;
+            try {
+                basePrice = Convert.ToDouble(basePriceStr);
+            } catch (Exception _)
             {
-                case 0:
-                    basePrice = 22.00;
-                    break;
-                case 1:
-                    basePrice = 12.00;
-                    break;
-                case 2:
-                    basePrice = 15.00;
-                    break;
-                case 3:
-                    basePrice = 17.00;
-                    break;
+                basePrice = 0;
             }
 
             double serviceGrade = ServiceRating.Value;
@@ -94,6 +85,11 @@ namespace TipCalculator
 
             tip = 0.25 * basePrice * (serviceGrade + mealGrade + localGrade) / 15.0 + extraEveningTip;
             TipTextBox.Text = Convert.ToString(tip);
+
+        }
+
+        private void TextBlock_SelectionChanged_2(object sender, RoutedEventArgs e)
+        {
 
         }
     }

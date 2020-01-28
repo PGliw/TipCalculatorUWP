@@ -9,8 +9,6 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
-        <TextBox HorizontalAlignment="Center" Margin="0,30,0,0" Text="Twoja recenzja dania" VerticalAlignment="Top" IsReadOnly="True"/>
         <TimePicker x:Name="MealTimePicker" HorizontalAlignment="Center" Margin="0,208,0,0" VerticalAlignment="Top" FontFamily="Segoe UI"/>
         <TextBlock HorizontalAlignment="Center" Margin="0,161,0,0" Text="O jakiej porze jadłeś?" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe UI"/>
         <RatingControl x:Name="ServiceRating" HorizontalAlignment="Center" Margin="0,316,0,0" VerticalAlignment="Top"/>
@@ -21,13 +19,10 @@
         <RatingControl x:Name="LocalRating" HorizontalAlignment="Center" Margin="0,530,0,0" VerticalAlignment="Top" FontFamily="Segoe MDL2 Assets"/>
         <Button x:Name="ButtonCalculate" Content="Oblicz napiwek" HorizontalAlignment="Center" Margin="0,592,0,0" VerticalAlignment="Top" Click="Button_Click"/>
         <TextBlock HorizontalAlignment="Center" Margin="0,668,0,0" Text="Kwota napiwku:" TextWrapping="Wrap" VerticalAlignment="Top" SelectionChanged="TextBlock_SelectionChanged_1" FontFamily="Segoe UI"/>
-        <TextBox x:Name="TipTextBox" HorizontalAlignment="Center" Margin="0,707,0,0" Text="?" VerticalAlignment="Top" Width="124" IsReadOnly="True"/>
-        <ComboBox x:Name="ComboMeal" HorizontalAlignment="Center" Margin="0,99,0,0" VerticalAlignment="Top" Width="333" SelectionChanged="ComboBox_SelectionChanged" PlaceholderText="Wybierz posiłek">
-            <x:String>Rolada z kluskami 22,00 zł</x:String>
-            <x:String>Wodzionka 12,00 zł</x:String>
-            <x:String>Karkówka z grilla 15,00 zł</x:String>
-            <x:String>Kotlet schabowy 17,00 zł</x:String>
-        </ComboBox>
+        <TextBox x:Name="TipTextBox" HorizontalAlignment="Center" Margin="0,707,0,0" Text="?" VerticalAlignment="Top" Width="124" IsReadOnly="True" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,28,0,0" Text="Kalkuator napiwków" TextWrapping="Wrap" VerticalAlignment="Top" SelectionChanged="TextBlock_SelectionChanged_2"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" SelectionChanged="TextBlock_SelectionChanged_2" FontFamily="Segoe UI"><Run Text="Ile wynosi podstawowa kwota rachunku?"/><LineBreak/><Run/></TextBlock>
+        <TextBox x:Name="BasePriceTextBox" TextAlignment="Right"  HorizontalAlignment="Center" Margin="0,110,0,0" VerticalAlignment="Top" PlaceholderText="0" Width="124"/>
 
     </Grid>
 </Page>
